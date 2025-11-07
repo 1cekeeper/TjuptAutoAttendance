@@ -9,8 +9,8 @@ jobs:
   publish:
     runs-on: ubuntu-latest
     steps:
-    - uses: actions/checkout@v2
-    - uses: actions/setup-python@v2
+    - uses: actions/checkout@v4
+    - uses: actions/setup-python@v4
       with:
         python-version: 3.8
     - name: Install dependencies
@@ -19,7 +19,7 @@ jobs:
         if [ -f requirements.txt ]; then pip install -r requirements.txt; fi
     - name: Cache Data
       id: cache-tjupt-attendance-data
-      uses: actions/cache@v2
+      uses: actions/cache@v4
       with:
         path: data
         key: ${{ runner.os }}-data
